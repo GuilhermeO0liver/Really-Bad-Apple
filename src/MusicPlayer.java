@@ -21,9 +21,10 @@ public class MusicPlayer {
 
             int frameCount = 0;
             for (int i = 0; i <= 6571; i++){
-                new Frame(frameCount);
+                Frame.FrameDisplay(frameCount);
                 frameCount++;
             }
+
             Thread.sleep(220000); // the exact time of the music
 
 

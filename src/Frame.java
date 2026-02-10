@@ -8,7 +8,7 @@ public class Frame extends JFrame{
     private static final double SPIRAL_GROWTH = 0.1;
     private static final double ANGLE_INCREMENT = 0.15;
 
-    public Frame(int frameCount) throws InterruptedException {
+    public Frame(int frameCount) {
 
         this.setSize(480, 360);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -31,10 +31,16 @@ public class Frame extends JFrame{
         ImageIcon Icon = new ImageIcon("src\\video_frames\\"+ frameCount +".jpg");
         JLabel label = new JLabel(Icon);
         this.add(label);
-
-        this.setVisible(true);
-        Thread.sleep(15);
-        this.dispose();
     }
 
+    public static void FrameDisplay(int frameCount) throws InterruptedException {
+        Frame frame1 = new Frame(frameCount);
+        frame1.setVisible(true);
+        try {
+            Thread.sleep(19);
+        } catch (InterruptedException e) {
+            System.out.println("Ocorrreu um erro");
+        }
+        frame1.dispose();
+    }
 }
